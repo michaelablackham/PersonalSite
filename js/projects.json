@@ -1,0 +1,412 @@
+[
+	{
+		"item":{
+			"id":"mf",
+			"class":"",
+			"name":"MembersFirst Corporate",
+			"position" : "Designer | Developer",
+			"coverimg" :"images/work-corporate.jpg"
+		},
+		"modal" : {
+			"images": [
+				"images/modal-mac-corporate.jpg",
+				"images/modal-corporate-1.jpg",
+				"images/modal-corporate-2.jpg"
+			],
+			"text" :{
+				"award":"",
+				"overview":"Complete overhaul of the MembersFirst corporate website in the design, development, and marketing worlds. This was a collaborative project with the entire design team, and I was brought in to make sure I was able to capture the essence of everyone's ideas and merge them into one cohesive design style. I lead resource and client meetings, as well as completed the wireframes, designs, and final front-end development of the site.",
+				"list":[
+					"MembersFirst INC.",
+					"Responsive", 
+					"Built on CMS",
+					"Lazy Load Imagery", 
+					"HTML",
+					"CSS",
+					"Javascript",
+					"Hubspot Integrations",
+					"Desk.com Integrations",
+					"Launched: September 2016"
+				],
+				"description":[
+					"2016 Website Design - MembersFirst - Homepage",
+					"2016 Website Design - MembersFirst - Layouts",
+					"2016 Website Design - MembersFirst - Detail"
+				],
+				"linktext":"View Site",
+				"link":"http://www.membersfirst.com/"
+			}
+		}
+	},
+	{
+		"item":{
+			"id":"morningside",
+			"class":"winner",
+			"name":"The Club at Morningside",
+			"position" : "Designer | Developer",
+			"coverimg" :"images/work-morningside.jpg"
+		},
+		"modal" : {
+			"images": [
+				"images/modal-mac-morningside.jpg",
+				"images/modal-morningside-1.jpg",
+				"images/modal-morningside-2.jpg"
+			],
+			"text" :{
+				"award":"2015 Interactive Media Award Winner - Best In Class",
+				"overview":"Luxury country club in California that was in need of a site redesign, both public and private sides. The club wanted something that felt more relaxing and high-end resort/boutique feel to portray “an oasis in the desert” in order to attract new members while also retaining current members. Beautiful photos and clean lines were the selling point for the club and were a big focus on the design of the site.",
+				"list":[
+					"MembersFirst INC.",
+					"2015 Best In Class - IMA",
+					"Lead Design Meetings with Client", 
+					"Public & Private Designs", 
+					"Panel Style Homepage", 
+					"Responsive Design (future)",
+					"Built on CMS", 
+					"HTML",
+					"CSS",
+					"Javascript",
+					"Launched: December 2015"
+				],
+				"description":[
+					"2015 Website Design - Club at Morningside - Homepage",
+					"2015 Website Design - Club at Morningside - Layouts",
+					"2015 Website Design - Club at Morningside - Detail"
+				],
+				"linktext":"View Site",
+				"link":"http://www.clubatmorningside.com/"
+			}
+		}
+	},
+	{
+		"item":{
+			"id":"seabury",
+			"class":"",
+			"name":"New Seabury on Cape Cod",
+			"position" : "Designer | Developer",
+			"coverimg" :"images/work-seabury.jpg"
+		},
+		"modal" : {
+			"images": [
+				"images/modal-mac-seabury.jpg",
+				"images/modal-seabury-1.jpg",
+				"images/modal-seabury-2.jpg"
+			],
+			"text" :{
+				"award":"",
+				"overview":"A complete site redesign for a prestigious community in Cape Cod. This community wanted to attract a younger crowd, showcase their public and private events, and make their current demographic happy with a new private side experience. Beautiful photos, a lot of content, and a fun personality really shine through with this site.",
+				"list":[
+					"MembersFirst INC.",
+					"Lead Design Meetings with Client", 
+					"Public & Private",  
+					"Built on CMS", 
+					"Drop Downs Navigation", 
+					"HTML",
+					"CSS",
+					"Javascript",
+					"Launched: Expected November 2016"
+				],
+				"description":[
+					"2016 Website Design - New Seabury on Cape Cod - Homepage",
+					"2016 Website Design - New Seabury on Cape Cod - Layouts",
+					"2016 Website Design - New Seabury on Cape Cod - Detail"
+				],
+				"linktext":"View Site",
+				"link":"http://newseabury.memfirstweb.net/"
+			}
+		}
+	},
+	{
+		"item":{
+			"id":"plymouth",
+			"class":"",
+			"name":"Plymouth Country Club",
+			"position" : "Designer",
+			"coverimg" :"images/work-plymouth.jpg"
+		},
+		"modal" : {
+			"images": [
+				"images/modal-mac-plymouth.jpg",
+				"images/modal-plymouth-1.jpg",
+				"images/modal-plymouth-2.jpg"
+			],
+			"text" :{
+				"award":"",
+				"overview":"Collaborative marketing project for between the club and MembersFirst to really showcase what we can do for our clients in both design, development, and marketing side of things. This is a project where we got to do whatever we really wanted to showcase a lot of our skills in all areas. The client's goal was to call attention to everything they offer and to have them stand out from a lot of the other clubs in the area while gaining a great boost in membership by using a lot of great photography and areas to showcase events and the everyday living of their members.",
+				"list":[
+					"MembersFirst INC.",
+					"Lead Design Meetings with Client", 
+					"Public & Private Design",  
+					"Design for CMS", 
+					"Launched: May 2016"
+				],
+				"description":[
+					"2016 Website Design - Plymouth Country Club - Homepage",
+					"2016 Website Design - Plymouth Country Club - Layouts",
+					"2016 Website Design - Plymouth Country Club - Detail"
+				],
+				"linktext":"View Site",
+				"link":"http://www.plymouthcc.net/"
+			}
+		}
+	},
+	{
+		"item":{
+			"id":"umass",
+			"class":"winner",
+			"name":"The UMass Club",
+			"position" : "Designer | Developer",
+			"coverimg" :"images/work-umass.jpg"
+		},
+		"modal" : {
+			"images": [
+				"images/modal-mac-umass.jpg",
+				"images/modal-umass-1.jpg",
+				"images/modal-umass-2.jpg"
+			],
+			"text" :{
+				"award":"2015 Interactive Media Award Winner - Best In Class",
+				"overview":"A fun project for me since I am a Umass Alumni who had never even heard of this club. I was given the opportunity to help the club gain more interest from alumni by creating a site that was appealing to the newly graduated demographic with a more modern and visual approach, while still appeasing older, more traditional members.",
+				"list":[
+					"MembersFirst INC.",
+					"2015 Best In Class - IMA",
+					"Lead Design Meetings with Client", 
+					"Public & Private Design",  
+					"Responsive Design (future)",
+					"Built on CMS", 
+					"HTML",
+					"CSS",
+					"Javascript",
+					"Ajax",
+					"Twitter API Integrations",
+					"Launched: October 2015"
+				],
+				"description":[
+					"2015 Website Design - The UMass Club - Homepage",
+					"2015 Website Design - The UMass Club - Layouts",
+					"2015 Website Design - The UMass Club - Detail"
+				],
+				"linktext":"View Site",
+				"link":"http://www.umassclub.com"
+			}
+		}
+	},
+	{
+		"item":{
+			"id":"ochsner",
+			"class":"",
+			"name":"Ochsner Fitness Center",
+			"position" : "Designer",
+			"coverimg" :"images/work-ochsner.jpg"
+		},
+		"modal" : {
+			"images": [
+				"images/modal-mac-ochsner.jpg",
+				"images/modal-ochsner-1.jpg",
+				"images/modal-ochsner-2.jpg"
+			],
+			"text" :{
+				"award":"",
+				"overview":"MemberFirst’s first fully responsive site within their proprietary content management system. I was the lead designer on this project where I needed to lead all design-related calls with the client, follow a strict branding guide from the client’s parent company, and create a seamless experience across multiple platforms.",
+				"list":[
+					"MembersFirst INC.",
+					"Lead Design Meetings with Client", 
+					"Responsive Design", 
+					"Design for CMS",
+					"Launched: May 2016"
+				 ],
+				 "description":[
+					"2016 Website Design - Ochsner Fitness Center - Homepage",
+					"2016 Website Design - Ochsner Fitness Center - Layouts",
+					"2016 Website Design - Ochsner Fitness Center - Detail"
+				],
+				"linktext":"View Site",
+				"link":"http://www.ochsnerfitness.com/"
+			}
+		}
+	},
+	{
+		"item":{
+			"id":"sawgrass",
+			"class":"winner",
+			"name":"Sawgrass Country Club",
+			"position" : "Designer | Developer",
+			"coverimg" :"images/work-sawgrass.jpg"
+		},
+		"modal" : {
+			"images": [
+				"images/modal-mac-sawgrass.jpg",
+				"images/modal-sawgrass-1.jpg",
+				"images/modal-sawgrass-2.jpg"
+			],
+			"text" :{
+				"award":"2015 Interactive Media Award Winner - Best In Class",
+				"overview":"A prestigious club that wanted a push away from anything too flat and super modern and wanted an overload of beautiful photos to really make them stand out from anyone in the area. As the lead designer, I was able to merge a lot of their ideas and concepts into something that worked for them without dating them.",
+				"list":[
+					"MembersFirst INC.",
+					"2015 Best In Class - IMA",
+					"Lead Design Meetings with Client", 
+					"Public & Private",  
+					"Built on CMS", 
+					"HTML",
+					"CSS",
+					"Javascript",
+					"Ajax",
+					"Twitter API Integrations",
+					"Yahoo Weather API Integrations",
+					"Launched: September 2015"
+				],
+				"description":[
+					"2015 Website Design - Sawgrass Country Club - Homepage",
+					"2015 Website Design - Sawgrass Country Club - Layouts",
+					"2015 Website Design - Sawgrass Country Club - Detail"
+				],
+				"linktext":"View Site",
+				"link":"http://www.sawgrasscountryclub.com/"
+			}
+		}
+	},
+	{
+		"item":{
+			"id":"cornell",
+			"class":"",
+			"name":"The Cornell Club of NYC",
+			"position" : "Designer | Developer",
+			"coverimg" :"images/work-cornell.jpg"
+		},
+		"modal" : {
+			"images": [
+				"images/modal-mac-cornell.jpg",
+				"images/modal-cornell-1.jpg",
+				"images/modal-cornell-2.jpg"
+			],
+			"text" :{
+				"award":"2015 Interactive Media Award - Best In Class",
+				"overview":"",
+				"list":[
+					"MembersFirst INC.",
+					"Lead Design Meetings with Client", 
+					"Public & Private",  
+					"Parallax",
+					"Built on CMS", 
+					"HTML",
+					"CSS",
+					"Javascript",
+					"Launched: April 2015"
+				],
+				"description":[
+					"2015 Website Design - The Cornell Club of NYC - Homepage",
+					"2015 Website Design - The Cornell Club of NYC - Layouts",
+					"2015 Website Design - The Cornell Club of NYC - Detail"
+				],
+				"linktext":"View Site",
+				"link":"http://www.cornellclubnyc.com"
+			}
+		}
+	},
+	{
+		"item":{
+			"id":"student",
+			"class":"",
+			"name":"Student Grounds",
+			"position" : "Designer",
+			"coverimg" :"images/work-student.jpg"
+		},
+		"modal" : {
+			"images": [
+				"images/modal-iphone-student.jpg",
+				"images/modal-student-1.jpg"
+			],
+			"text" :{
+				"award":"",
+				"overview":"2016 personal project for a group of kids creating their own app and business for Brandeis University. Similar to Craigslist, this is a university only app and website where students can safely sell and buy used items; books, furniture, etc. and find sublets as well as jobs within the campus community. These students had great ideas but needed some help from someone in the industry to QA, mentor, and create an interface that worked for them and the experience of their audience.",
+				"list":[
+					"Personal Project",
+					"Mobile App", 
+					"Create a Smooth Experience for Viewers",
+					"Responsive Design"
+				],
+				"description":[
+					"2016 App Design - Student Grounds - Homepage",
+					"2016 Website Design - Student Grounds - Layouts"
+				],
+				"linktext":"No Link",
+				"link":""
+			}
+		}
+	},
+	{
+		"item":{
+			"id":"atlantic",
+			"class":"",
+			"name":"The Atlantic Club",
+			"position" : "Designer | Developer",
+			"coverimg" : "images/work-atlantic.jpg"
+		},
+		"modal" : {
+			"images": [
+				"images/modal-mac-atlantic.jpg",
+				"images/modal-atlantic-1.jpg",
+				"images/modal-atlantic-2.jpg"
+			],
+			"text" :{
+				"award":"",
+				"overview":"",
+				"list":[
+					"MembersFirst INC.",
+					"Lead Design Meetings with Client",  
+					"Built on CMS", 
+					"Mega Menu Dropdown Navigation",
+					"Hotspot Map",
+					"HTML",
+					"CSS",
+					"Javascript", 
+					"Launched: October 28, 2015"
+				],
+				"description":[
+					"2015 Website Design - The Atlantic Club - Homepage",
+					"2015 Website Design - The Atlantic Club - Layouts",
+					"2015 Website Design - The Atlantic Club - Detail"
+				],
+				"linktext":"View Site",
+				"link":"http://www.theatlanticclub.com/"
+			}
+		}
+	},
+	{
+		"item":{
+			"id":"art",
+			"class":"",
+			"name":"Fine Arts",
+			"position" : "Charcoal | Paintings",
+			"coverimg" : "images/work-charcoal.jpg"
+		},
+		"modal" : {
+			"images": [
+				"images/modal-art-1.jpg",
+				"images/modal-art-2.jpg",
+				"images/modal-art-3.jpg",
+				"images/modal-art-4.jpg"
+			],
+			"text" :{
+				"award":"",
+				"overview":"I love being in the web business, but sometimes a little hands on work and less screen time is really great to improve on a multiude of skills (and great for the brain).",
+				"list":[
+					"Personal Projects",
+					"Charcoal",
+					"Acrylics"
+				],
+				"description":[
+					"2015 Charcoal Portrait | Logan | 8.5x11",
+					"2010 Charcoal Portrait | Natalie | 8.5x11",
+					"2010 Charcoal Portrait | Life of a Father Series 1/3 | 8.5x11"
+				],
+				"linktext":"No Link",
+				"link":""
+			}
+		}
+	}
+
+	
+]
+
