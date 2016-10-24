@@ -10,6 +10,7 @@ $(document).ready(function() {
     scrollNav();
     footerSize();
     subtleMovements();
+    easterEgg();
 	$( window ).resize(function() {
         footerSize();
 		heroSize(); 
@@ -21,8 +22,12 @@ $(document).ready(function() {
 });
 $(window).load(function(){
     workSize();
-    $(".loadin").fadeIn(3000);
-    $(".lazy").lazyload({effect : "fadeIn"});
+    $(".lazy").lazyload({
+        effect : "fadeIn",
+        threshold : 300
+    });
+    $("#website").delay(1500).animate({opacity: 1}, 1000);
+    $("#loader").delay(1500).fadeOut(900);
 });
 
 /************************
@@ -81,8 +86,8 @@ $(window).load(function(){
     function heroSize(){
         var windowHeight = $(window).height();
         var windowWidth = $(window).width();
-        $("header, #hero, #hello").height(windowHeight);
-        $("#hero .mask").height(windowHeight+100);
+        $("header, #hero, #hello, #hero iframe").height(windowHeight);
+        $("#hero .mask").height(windowHeight+70);
     }
     function workSize(){
         var workWidth = $("#work a").width();
@@ -111,6 +116,14 @@ $(window).load(function(){
                 left:0
             }, 300, function() { $("#main-navigation button").removeClass("close-btn"); });
         });
+        //SWIPE TO CLOSE NAVIGATION
+          $("#website").on("swipeleft",function(){
+            $("#main-navigation .nav-collapse").fadeOut(200);
+            $("#main-navigation").removeClass("open");
+            $("section, #hero, footer").animate({
+                left:0
+            }, 300, function() { $("#main-navigation button").removeClass("close-btn"); });;
+          });
     }
 /*HERO TEXT FADE, HERO OPACITY*/
     function heroScroll(){
@@ -183,48 +196,72 @@ function subtleMovements(){
         $.getJSON("http://michaelablackham.com/js/projects.json").always(
             function(d){
                 var winner ='<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 117 135.3" style="enable-background:new 0 0 117 135.3;" ><polygon class="ribbon" points="61.1,41.7 69.8,42.9 63.6,49 65.1,57.7 57.3,53.7 49.6,57.8 51,49.2 44.7,43.1 53.3,41.8 57.1,33.9 "/><polygon class="ribbon" points="56.6,14.2 66.5,7.1 72,17.9 84,16.3 83.8,28.4 95.2,32.5 89.4,43.2 97.6,52.1 87.5,58.9 90.6,70.6 78.5,71.9 75.8,83.7 64.5,79.2 56.6,88.4 48.8,79.2 37.5,83.7 34.8,71.9 22.7,70.6 25.8,58.9 15.7,52.1 23.9,43.2 18.1,32.5  29.5,28.4 29.3,16.3 41.3,17.9 46.8,7.1 "/><circle class="ribbon" cx="57" cy="47.1" r="23.2"/><polyline class="ribbon" points="61.7,82.8 86.8,125.4 93.1,112 109.1,113.9 84.1,70.3 "/><polyline class="ribbon" points="53.8,83.9 28.6,126.5 22.3,113.1 6.3,115 31.3,71.4 "/></svg>';
-                var linkAttr = ' col-xs-6 col-md-4 col-lg-3 col-xl-2 projectimage" data-toggle="modal" data-target="#modal-window" id="' ;
+                var linkAttr = ' col-xs-6 col-md-4 col-lg-3 col-xl-2 projectimage" data-toggle="modal" data-target="#myModal" id="' ;
                 var textDiv ='<div class="text absolute bottom left text-center">';
                 var maskDiv = '<div class="mask block top left absolute"> </div>' ;
-                var imageDiv = '<div class="image block absolute top left lazy" style="display: block; background-image: url(images/pixel.gif);" data-original="'
+                var imageDiv = '<div class="image block absolute top left work-lazy" style="display: block; background-image: url(images/pixel.gif);" data-original="'
                 for (i = 0; i < d.length; i++) { 
                     $("#work .row").append('<a class="'+d[i].item.class+linkAttr + d[i].item.id + '">' +textDiv+'<h3>'+d[i].item.name+'</h3> <p>'+d[i].item.position+'</p></div>'+maskDiv+imageDiv+d[i].item.coverimg+'"></div></a>');
                 };
                 $('.projectimage').click(function(){
                     var index = $( "#work .projectimage" ).index( this );
-                    $('#modal-window .modal-content').find('h4').removeClass("winner");
-                    $('#modal-window .modal-content').find('.utilities p').remove();
-                    $('#modal-window .modal-content').find('.list li').remove();
-                    $('#modal-window .modal-content .images').find("img").remove();
-                    $('#modal-window .modal-content a.button').show();
-                    $('#modal-window .modal-content a.button').attr("href", "").text("");
-                    $('#modal-window .modal-content .content-header').css("background-image", "");
-                    $('#modal-window .modal-content').find('h2').text(d[index].item.name);
-                    $('#modal-window .modal-content').find('h3').text(d[index].item.position);
-                    $('#modal-window .modal-content').find('h4').addClass(d[index].item.class).html(winner+d[index].modal.text.award);
-                    $('#modal-window .modal-content').find('.overview').text(d[index].modal.text.overview);
-                    $('#modal-window .modal-content .content-header').css("background-image", "url("+d[index].item.coverimg+")");
+                    $('#myModal .modal-content').find('h4').removeClass("winner");
+                    $('#myModal .modal-content').find('.utilities p').remove();
+                    $('#myModal .modal-content').find('.list li').remove();
+                    $('#myModal .modal-content .images').find("img").remove();
+                    $('#myModal .modal-content a.button').show();
+                    $('#myModal .modal-content a.button').attr("href", "").text("");
+                    $('#myModal .modal-content .content-header').css("background-image", "");
+                    $('#myModal .modal-content').find('h2').text(d[index].item.name);
+                    $('#myModal .modal-content').find('h3').text(d[index].item.position);
+                    $('#myModal .modal-content').find('h4').addClass(d[index].item.class).html(winner+d[index].modal.text.award);
+                    $('#myModal .modal-content').find('.overview').text(d[index].modal.text.overview);
+                    $('#myModal .modal-content .content-header').css("background-image", "url("+d[index].item.coverimg+")");
                     if( d[index].modal.text.linktext == "No Link"){
-                        $('#modal-window .modal-content a.button').hide();
+                        $('#myModal .modal-content a.button').hide();
                     }else{
-                        $('#modal-window .modal-content a.button').attr("href", d[index].modal.text.link).text(d[index].modal.text.linktext);
+                        $('#myModal .modal-content a.button').attr("href", d[index].modal.text.link).text(d[index].modal.text.linktext);
                     };
                     for (i = 0; i < d[index].modal.text.list.length; i++) { 
-                        $('#modal-window .modal-content').find(".list").append('<li>'+d[index].modal.text.list[i]+'</li>');
+                        $('#myModal .modal-content').find(".list").append('<li>'+d[index].modal.text.list[i]+'</li>');
                     };
                     for (i = 0; i < d[index].modal.images.length; i++) { 
-                        $('#modal-window .modal-content').find(".images").append('<img src="'+d[index].modal.images[i]+'" alt="'+d[index].modal.text.description[i]+'"/>');
+                        $('#myModal .modal-content').find(".images").append('<img class="work-lazy" data-original="'+d[index].modal.images[i]+'" alt="'+d[index].modal.text.description[i]+'"/>');
                     };
+                    $(".work-lazy").lazyload({
+                         container: $("#myModal"),
+                         effect : "fadeIn",
+                         threshold : 500
+                    });
+                });
+                workSize();
+                $(".work-lazy").lazyload({
+                     effect : "fadeIn",
+                     threshold : 300
                 });
             }
         );
-        // $(document).keydown(function(event){ 
-        //     if(event.keycode === 27){ 
-        //         $("#modal-window").removeClass("in").hide();
-        //     }
-        // });
-    }
 
+    }
+//EASTER EGG
+    function easterEgg(){
+        if (window.addEventListener) {
+            var keys = [],
+            konami = "38,38,40,40,37,39,37,39,66,65";
+            window.addEventListener("keydown", function(e){
+                keys.push(e.keyCode);
+                if (keys.toString().indexOf(konami) >= 0) {
+                    var playNsync = function () {
+                        $("#hero video#bgvid").hide();
+                        $("#hero .easteregg").show();
+                        $("#hero iframe").attr("src","https://www.youtube.com/embed/Yc-sNZP9nyk?rel=0&autoplay=1");
+                    };
+                    playNsync();
+                    keys = [];
+                };
+            }, true);
+        };
+    }
 
 
 
