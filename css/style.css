@@ -7,6 +7,9 @@
 body.modal-open {
   overflow: hidden; }
 
+#website {
+  opacity: 0; }
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal; }
 
@@ -19,6 +22,9 @@ h2 {
   font-size: 2.5em;
   font-style: italic;
   letter-spacing: 1px; }
+
+.ui-loader {
+  display: none !important; }
 
 .container-fluid {
   padding: 0px; }
@@ -120,9 +126,6 @@ a {
       background: #04807c;
       border: 1px solid #04807c; }
 
-.loadin {
-  display: none; }
-
 .movement {
   opacity: 0;
   position: relative;
@@ -151,6 +154,23 @@ a {
 .movement.active {
   top: 0;
   opacity: 1; }
+
+/***LOADER****/
+#loader {
+  background: #04807c; }
+  #loader svg {
+    top: 39%;
+    left: 30%;
+    width: 40%; }
+    #loader svg path {
+      fill: none;
+      stroke-width: 1;
+      stroke-miterlimit: 10;
+      stroke: #fff;
+      display: inline;
+      stroke-dasharray: 300;
+      stroke-dashoffset: 0;
+      -webkit-animation: dash 2s linear alternate infinite; }
 
 /***NAVIGATION***/
 #main-navigation {
@@ -342,6 +362,11 @@ a {
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%); }
+  #hero .easteregg {
+    display: none; }
+    #hero .easteregg iframe {
+      width: 100%;
+      height: 100%; }
 
 /**************************
 		CONTENT
@@ -357,14 +382,19 @@ a {
   #who a {
     color: #8bc0bd;
     font-weight: bold; }
+  #who > div {
+    display: table; }
   #who .row:first-of-type .fact {
     border-top: 0; }
   #who .row .fact {
     border-left: 1px solid #e4e4e4;
     border-top: 1px solid #e4e4e4;
     box-sizing: border-box;
-    padding: 40px 80px;
-    height: 430px; }
+    padding: 60px 80px;
+    /*height:430px;*/
+    display: table-cell;
+    vertical-align: middle;
+    float: none; }
     #who .row .fact p {
       color: #565658; }
     #who .row .fact svg {
@@ -397,23 +427,23 @@ a {
       letter-spacing: .5px;
       font-weight: normal;
       transition-delay: 0s;
-      transition-duration: 0.1s;
+      transition-duration: 0.2s;
       transition-property: all;
       transition-timing-function: linear;
       -webkit-transition-delay: 0s;
-      -webkit-transition-duration: 0.1s;
+      -webkit-transition-duration: 0.2s;
       -webkit-transition-property: all;
       -webkit-transition-timing-function: linear;
       -moz-transition-delay: 0s;
-      -moz-transition-duration: 0.1s;
+      -moz-transition-duration: 0.2s;
       -moz-transition-property: all;
       -moz-transition-timing-function: linear;
       -o-transition-delay: 0s;
-      -o-transition-duration: 0.1s;
+      -o-transition-duration: 0.2s;
       -o-transition-property: all;
       -o-transition-timing-function: linear;
       -ms-transition-delay: 0s;
-      -ms-transition-duration: 0.1s;
+      -ms-transition-duration: 0.2s;
       -ms-transition-property: all;
       -ms-transition-timing-function: linear; }
       #work a .text p {
@@ -605,14 +635,14 @@ footer {
   .modal .close {
     font-size: 50px;
     font-weight: 300;
-    position: absolute;
+    position: fixed;
     top: 8px;
     right: 20px;
     padding: 10px 20px;
     z-index: 4;
     color: #fff;
     opacity: 1;
-    text-shadow: 0; }
+    text-shadow: none; }
   .modal .modal-dialog {
     width: 100%;
     height: 100%;
@@ -682,89 +712,20 @@ footer {
     transform: translateY(-15px); }
   60% {
     transform: translateY(-5px); } }
-/*PLANE FYING*/
-@-webkit-keyframes flying {
-  0% {
-    right: 1%;
-    top: 13%;
-    transform: rotate(-10deg) scale(0.5); }
-  50% {
-    right: 29%;
-    top: 1%;
-    transform: rotate(-25deg) scale(1.1); }
-  100% {
-    right: 58%;
-    top: 24%;
-    transform: rotate(-46deg) scale(0.7); } }
-@keyframes flying {
-  0% {
-    right: 1%;
-    top: 13%;
-    transform: rotate(-10deg) scale(0.5); }
-  50% {
-    right: 29%;
-    top: 1%;
-    transform: rotate(-25deg) scale(1.1); }
-  100% {
-    right: 58%;
-    top: 24%;
-    transform: rotate(-46deg) scale(0.7); } }
-/*SUN ROTATION*/
-@-webkit-keyframes rotating {
-  0% {
-    transform: rotate(0deg); }
-  100% {
-    transform: rotate(360deg); } }
-@keyframes rotating {
-  0% {
-    transform: rotate(0deg); }
-  100% {
-    transform: rotate(360deg); } }
-/*ARM WAVING*/
-@-webkit-keyframes waving {
-  0% {
-    transform: rotate(0deg);
-    transform-origin: bottom right; }
-  50% {
-    transform: rotate(25deg);
-    transform-origin: bottom right; }
-  100% {
-    transform: rotate(0deg);
-    transform-origin: bottom right; } }
-@keyframes waving {
-  0% {
-    transform: rotate(0deg);
-    transform-origin: bottom right; }
-  50% {
-    transform: rotate(25deg);
-    transform-origin: bottom right; }
-  100% {
-    transform: rotate(0deg);
-    transform-origin: bottom right; } }
-/*KICKING BALL*/
-/*@-webkit-keyframes kicking {
-	0% {transform:rotate(0deg);  transform-origin: bottom right;}
-	70% {transform:rotate(25deg);  transform-origin: bottom right;}
-	100% {;transform:rotate(0deg); transform-origin: bottom right; }
-}*/
-@keyframes kicking {
-  0% {
-    left: 20%;
-    bottom: 0%;
-    transform: rotate(0deg) scale(1); }
-  60% {
-    left: 80%;
-    bottom: 40%;
-    transform: rotate(540deg) scale(4); }
-  100% {
-    left: 120%;
-    bottom: 15%;
-    transform: rotate(720deg) scale(2); } }
+@keyframes dash {
+  from {
+    stroke-dashoffset: 300; }
+  to {
+    stroke-dashoffset: 0; } }
+@-webkit-keyframes dash {
+  from {
+    stroke-dashoffset: 300; }
+  to {
+    stroke-dashoffset: 0; } }
 /****MEDIA QUERIES****/
 @media (max-width: 1200px) {
   #who .row .fact {
-    padding: 40px;
-    height: 500px; } }
+    padding: 40px; } }
 @media (max-width: 991px) {
   .modal .modal-dialog .modal-content .content-header {
     padding: 50px 40px; }
@@ -791,14 +752,21 @@ footer {
     border-left: 0;
     border-top: 1px solid #e4e4e4;
     padding: 40px;
-    height: auto; }
+    height: auto;
+    display: inline-block;
+    float: left; }
   #who .row:first-of-type .fact {
     border-top: 1px solid #e4e4e4; }
   #who .row:first-of-type:first-of-type .fact:first-of-type {
     border: 0; }
 
   #experience .row.numbers > div {
-    height: auto; } }
+    height: auto; }
+
+  #loader svg {
+    top: 40%;
+    left: 15%;
+    width: 70%; } }
 @media (min-width: 701px) {
   #main-navigation button {
     display: none !important; }
