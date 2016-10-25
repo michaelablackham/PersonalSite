@@ -1,2 +1,2 @@
 # PersonalSite
-Complete full files for my personal site redesign - 2016
+Complete uncompressed files for my portfolio site.
