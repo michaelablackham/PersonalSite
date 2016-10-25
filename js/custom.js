@@ -1,26 +1,20 @@
 $(document).ready(function() {
     projectList();
-	heroSize();
-    heroBG();
+    heroSize();
     scrollMovement();
-    navigationActive();
     menuClick();
     introPosition();
     heroScroll();
-    scrollNav();
     footerSize();
-    subtleMovements();
     easterEgg();
-	$( window ).resize(function() {
-        footerSize();
-		heroSize(); 
-        heroBG();
-        workSize();
-        navigationActive();
-        introPosition();
-	});
 });
-$(window).load(function(){
+$(window).resize(function() {
+      footerSize();
+      heroSize();
+      workSize();
+      introPosition();
+})
+.load(function(){
     workSize();
     $(".lazy").lazyload({
         effect : "fadeIn",
@@ -34,27 +28,6 @@ $(window).load(function(){
         FUNCTIONS
 ************************/
 /*NAVIGATION*/
-    function navigationActive(){
-        var sectionArray = [];
-        $('section').each(function() {
-            var sectionLocation = $(this).offset().top - 61;
-            sectionArray.push(sectionLocation)
-        });
-        $(window).scroll(function(){
-            var scrollTop = $(window).scrollTop();
-            $("nav li").removeClass("active");
-            if(scrollTop >= 0 && scrollTop <= sectionArray[1]){
-                $("nav li.hello").addClass("active");
-            }else if(scrollTop >= sectionArray[1] && scrollTop <= sectionArray[2]){
-                $("nav li.who").addClass("active");
-            }else if(scrollTop >= sectionArray[2] && scrollTop <= sectionArray[3]){
-                $("nav li.work").addClass("active");
-            }else if(scrollTop >= sectionArray[3]){
-                $("nav li.experience").addClass("active");
-            };
-
-        });
-    }
     function scrollMovement(){
         var windowWidth = $(window).width();
         $('a[href*=#]:not([href=#])').click(function() {
@@ -72,14 +45,9 @@ $(window).load(function(){
                             scrollTop: target.offset().top
                         }, 1000);
                         return false;
-                    };
-                };
-            };
-        });
-    }
-    function scrollNav(){
-        $(window).on("scroll", function() {
-            $('#main-navigation').toggleClass('scroll', $(document).scrollTop() >= 80);
+                    }
+                }
+            }
         });
     }
 /*HEIGHT AND WIDTH SIZES*/
@@ -103,135 +71,153 @@ $(window).load(function(){
     }
 /*MOBILE NAV*/
     function menuClick(){
-        $("#main-navigation button").toggle(function(){
-            $("#main-navigation .nav-collapse").fadeIn(400);
-            $("#main-navigation").addClass("open");
+      // store the elements you'll be finding multiple times. Also, by using the mainNav as a starting point for the button, the browser has less DOM elements to look through for the selector, making it faster. Also notice I pulled out the anonymous functions that are repeated, and made them named functions. 1, it makes it easir to see they are related, and 2 it's less that you'll have to edit when you want to change that action.
+      var mainNav = $("#main-navigation"),
+       mainNavButton = mainNav.find('button'),
+       mainNavCollapse = mainNav.find(".nav-collapse");
+
+        mainNavButton.toggle(function(){
+            mainNavCollapse.fadeIn(400);
+            mainNav.addClass("open");
             $("section, #hero, footer").animate({
                 left:205
-            }, 300, function() { $("#main-navigation button").addClass("close-btn"); });
-        }, function(){
-            $("#main-navigation .nav-collapse").fadeOut(200);
-            $("#main-navigation").removeClass("open");
-            $("section, #hero, footer").animate({
-                left:0
-            }, 300, function() { $("#main-navigation button").removeClass("close-btn"); });
-        });
+            }, 300, function removeCloseClass() { mainNavButton.addClass("close-btn"); });
+        }, menuClose);
         //SWIPE TO CLOSE NAVIGATION
-          $("#website").on("swipeleft",function(){
-            $("#main-navigation .nav-collapse").fadeOut(200);
-            $("#main-navigation").removeClass("open");
+          $("#website").on("swipeleft",menuClose);
+          // menu close
+          function menuClose(){
+            mainNavCollapse.fadeOut(200);
+            mainNav.removeClass("open");
             $("section, #hero, footer").animate({
                 left:0
-            }, 300, function() { $("#main-navigation button").removeClass("close-btn"); });;
-          });
+            }, 300, removeCloseClass);
+          }
+          // button Class toggle
+          function removeCloseClass() { mainNavButton.removeClass("close-btn"); }
     }
 /*HERO TEXT FADE, HERO OPACITY*/
     function heroScroll(){
+      var helloTextScroller = $('#hello .text, #hello a.scroller'),
+      hero = $("#hero"),
+      heroMask = hero.find(".mask.fade"),
+      heroVideo = hero.find('video'),
+      footer = $('footer'),
+      movement = $(".movement"),
+      skill = $(".skill"),
+      nav = $("nav"),
+      navHello = nav.find("li.hello"),
+      navWho = nav.find("li.who"),
+      navWork = nav.find("li.work"),
+      navExp = nav.find("li.experience"),
+      whoOffset = $("#who").offset().top,
+      experienceOffset = $("#experience").offset().top,
+      footerSize = $("footer").outerHeight(),
+      sectionArray = [];
+      $('section').each(function() {
+          var sectionLocation = $(this).offset().top - 61;
+          sectionArray.push(sectionLocation);
+      });
+
         $(window).on('scroll', function () {
-            var windowHeight = $(window).height();
-            pxlCount = $(document).scrollTop()/1000;
-            $("#hero .mask.fade").css("opacity", pxlCount) ;   
-            if($(window).scrollTop() > 20 && $(window).scrollTop() <= windowHeight) {
-                var init = 80;
-                var top = $(window).scrollTop();
-                var calc = parseFloat(init/top);
-                $('#hello .text, #hello a.scroller').css('opacity', calc);
+            var windowHeight = $(window).height(), 
+            documentHeight = $(document).height(),
+            heightDifference = documentHeight - windowHeight - footerSize,
+            pxlCount = $(document).scrollTop()/1000,
+            winScrollTop = $(window).scrollTop(); 
+
+            $('#main-navigation').toggleClass('scroll', $(document).scrollTop() >= 80);
+            // hero scroll
+            heroMask.css("opacity", pxlCount) ;
+            if(winScrollTop > 20 && winScrollTop <= windowHeight) {
+                var calc = parseFloat(80/winScrollTop);
+                helloTextScroller.css('opacity', calc);
             } else {
-                if ($(window).scrollTop() < 50) {
-                    $('#hello .text, #hello a.scroller').css('opacity', '1');
-                } else if($(window).scrollTop() > windowHeight) {
-                    $('#hello .text, #hello a.scroller').css('opacity', '0');
-                };
-            };
+                if (winScrollTop < 50) {
+                    helloTextScroller.css('opacity', '1');
+                } else if(winScrollTop > windowHeight) {
+                    helloTextScroller.css('opacity', '0');
+                }
+            }
+             // hero BG
+            if(winScrollTop >= (whoOffset + 100)){
+                heroVideo.css("z-index","3");
+            }else{
+                heroVideo.css("z-index","1");
+            }
+            if(winScrollTop >= (heightDifference)){
+                footer.addClass("scroll");
+            }else{
+                footer.removeClass("scroll");
+            }
+            // subtleMovements
+            movement.each(function() {
+                var fadePosition = $(this).offset().top;
+                if( winScrollTop >= (fadePosition-(windowHeight/1.1)) ){
+                    $(this).addClass("active");
+                }
+            });
+            skill.each(function() {
+                var fadePosition = $(this).offset().top;
+                var progress = $(this).find(".progress-bar").attr("aria-valuenow");
+                if( winScrollTop >= (fadePosition-(windowHeight/1.1)) ){
+                    $(this).find(".progress-bar").css("width",progress+"%");
+                }
+            });
+            // navigationActive
+            nav.find("li").removeClass("active");
+            if(winScrollTop >= 0 && winScrollTop <= sectionArray[1]){
+                navHello.addClass("active");
+            }else if(winScrollTop >= sectionArray[1] && winScrollTop <= sectionArray[2]){
+                navWho.addClass("active");
+            }else if(winScrollTop >= sectionArray[2] && winScrollTop <= sectionArray[3]){
+                navWork.addClass("active");
+            }else if(winScrollTop >= sectionArray[3]){
+                navExp.addClass("active");
+            }
+
         });
     }
-    function heroBG(){
-        $(window).scroll(function(){
-            var scrollTop = $(window).scrollTop();
-            if(scrollTop >= ($("#who").offset().top+100)){
-                $("#hero video").css("z-index","3");
-            }else{
-                $("#hero video").css("z-index","1");
-            };
-            if(($(window).height()) <= 768){
-                if(scrollTop >= ($("#experience").offset().top+150)){
-                    $("footer").addClass("scroll");
-                }else{
-                    $("footer").removeClass("scroll");
-                };
-            }else{
-                if(scrollTop >= ($("#experience").offset().top-350)){
-                    $("footer").addClass("scroll");
-                }else{
-                    $("footer").removeClass("scroll");
-                };
-            };
-        });
 
-    }
-/*MOVEMENTS*/ 
-function subtleMovements(){
-    var windowHeight = $(window).height();
-    $(window).scroll(function(){
-        var scrollTop = $(window).scrollTop();
-        $( ".movement" ).each(function() {
-            var fadePosition = $(this).offset().top;
-            if( scrollTop >= (fadePosition-(windowHeight/1.1)) ){
-                $(this).addClass("active");
-            }
-        });
-        $( ".skill" ).each(function() {
-            var fadePosition = $(this).offset().top;
-            var progress = $(this).find(".progress-bar").attr("aria-valuenow")
-            if( scrollTop >= (fadePosition-(windowHeight/1.1)) ){
-                $(this).find(".progress-bar").css("width",progress+"%");
-            }
-        });
-    });
-
-
-}
 /*PORTFOLIO CONTENT & POP UP*/
     function projectList(){
+      var modalContent = $('#myModal .modal-content');
         $.getJSON("http://michaelablackham.com/js/projects.json").always(
             function(d){
-                var winner ='<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 117 135.3" style="enable-background:new 0 0 117 135.3;" ><polygon class="ribbon" points="61.1,41.7 69.8,42.9 63.6,49 65.1,57.7 57.3,53.7 49.6,57.8 51,49.2 44.7,43.1 53.3,41.8 57.1,33.9 "/><polygon class="ribbon" points="56.6,14.2 66.5,7.1 72,17.9 84,16.3 83.8,28.4 95.2,32.5 89.4,43.2 97.6,52.1 87.5,58.9 90.6,70.6 78.5,71.9 75.8,83.7 64.5,79.2 56.6,88.4 48.8,79.2 37.5,83.7 34.8,71.9 22.7,70.6 25.8,58.9 15.7,52.1 23.9,43.2 18.1,32.5  29.5,28.4 29.3,16.3 41.3,17.9 46.8,7.1 "/><circle class="ribbon" cx="57" cy="47.1" r="23.2"/><polyline class="ribbon" points="61.7,82.8 86.8,125.4 93.1,112 109.1,113.9 84.1,70.3 "/><polyline class="ribbon" points="53.8,83.9 28.6,126.5 22.3,113.1 6.3,115 31.3,71.4 "/></svg>';
                 var linkAttr = ' col-xs-6 col-md-4 col-lg-3 col-xl-2 projectimage" data-toggle="modal" data-target="#myModal" id="' ;
                 var textDiv ='<div class="text absolute bottom left text-center">';
                 var maskDiv = '<div class="mask block top left absolute"> </div>' ;
-                var imageDiv = '<div class="image block absolute top left work-lazy" style="display: block; background-image: url(images/pixel.gif);" data-original="'
-                for (i = 0; i < d.length; i++) { 
-                    $("#work .row").append('<a class="'+d[i].item.class+linkAttr + d[i].item.id + '">' +textDiv+'<h3>'+d[i].item.name+'</h3> <p>'+d[i].item.position+'</p></div>'+maskDiv+imageDiv+d[i].item.coverimg+'"></div></a>');
-                };
+                var imageDiv = '<div class="image block absolute top left work-lazy" style="display: block; background-image: url(images/pixel.gif);" data-original="';
+                for (i = 0; i < d.length; i++) {
+                    $("#work .row").append('<a class="' + d[i].item.class + linkAttr + d[i].item.id + '">' +textDiv+'<h3>'+d[i].item.name+'</h3> <p>'+d[i].item.position+'</p></div>'+maskDiv+imageDiv+d[i].item.coverimg+'"></div></a>');
+                }
+
                 $('.projectimage').click(function(){
                     var index = $( "#work .projectimage" ).index( this );
-                    $('#myModal .modal-content').find('h4').removeClass("winner");
-                    $('#myModal .modal-content').find('.utilities p').remove();
-                    $('#myModal .modal-content').find('.list li').remove();
-                    $('#myModal .modal-content .images').find("img").remove();
-                    $('#myModal .modal-content a.button').show();
-                    $('#myModal .modal-content a.button').attr("href", "").text("");
-                    $('#myModal .modal-content .content-header').css("background-image", "");
-                    $('#myModal .modal-content').find('h2').text(d[index].item.name);
-                    $('#myModal .modal-content').find('h3').text(d[index].item.position);
-                    $('#myModal .modal-content').find('h4').addClass(d[index].item.class).html(winner+d[index].modal.text.award);
-                    $('#myModal .modal-content').find('.overview').text(d[index].modal.text.overview);
-                    $('#myModal .modal-content .content-header').css("background-image", "url("+d[index].item.coverimg+")");
+                    modalContent.find('h4').removeClass("winner").addClass(d[index].item.class).html(d[index].modal.text.award);
+                    modalContent.find('.utilities p').remove();
+                    modalContent.find('.list li').remove();
+                    modalContent.find('.images img').remove();
+                    modalContent.find('.content-header').css("background-image", "url("+d[index].item.coverimg+")");
+                    modalContent.find('h2').text(d[index].item.name);
+                    modalContent.find('h3').text(d[index].item.position);
+                    modalContent.find('.overview').text(d[index].modal.text.overview);
+                    modalContent.find(".images").append('<img src="'+d[index].modal.images[0]+'" alt="'+d[index].modal.text.description[0]+'"/>');
                     if( d[index].modal.text.linktext == "No Link"){
-                        $('#myModal .modal-content a.button').hide();
+                        modalContent.find('a.button').hide().attr("href", "").text("");
                     }else{
-                        $('#myModal .modal-content a.button').attr("href", d[index].modal.text.link).text(d[index].modal.text.linktext);
-                    };
-                    for (i = 0; i < d[index].modal.text.list.length; i++) { 
-                        $('#myModal .modal-content').find(".list").append('<li>'+d[index].modal.text.list[i]+'</li>');
-                    };
-                    for (i = 0; i < d[index].modal.images.length; i++) { 
-                        $('#myModal .modal-content').find(".images").append('<img class="work-lazy" data-original="'+d[index].modal.images[i]+'" alt="'+d[index].modal.text.description[i]+'"/>');
-                    };
+                        modalContent.find('a.button').show().attr("href", d[index].modal.text.link).text(d[index].modal.text.linktext);
+                    }
+                    for (i = 0; i < d[index].modal.text.list.length; i++) {
+                        modalContent.find(".list").append('<li>'+d[index].modal.text.list[i]+'</li>');
+                    }
+                    for (i = 1; i < d[index].modal.images.length; i++) {
+                        modalContent.find(".images").append('<img class="work-lazy" data-original="'+d[index].modal.images[i]+'" alt="'+d[index].modal.text.description[i]+'"/>');
+                    }
                     $(".work-lazy").lazyload({
                          container: $("#myModal"),
                          effect : "fadeIn",
-                         threshold : 500
+                         threshold : 700
                     });
                 });
                 workSize();
@@ -241,7 +227,6 @@ function subtleMovements(){
                 });
             }
         );
-
     }
 //EASTER EGG
     function easterEgg(){
@@ -258,13 +243,7 @@ function subtleMovements(){
                     };
                     playNsync();
                     keys = [];
-                };
+                }
             }, true);
-        };
+        }
     }
-
-
-
-	
-
-
