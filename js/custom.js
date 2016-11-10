@@ -182,7 +182,7 @@ $(window).resize(function() {
 /*PORTFOLIO CONTENT & POP UP*/
     function projectList(){
       var modalContent = $('#myModal .modal-content');
-        $.getJSON("http://michaelablackham.com/js/projects.json").always(
+        $.getJSON("js/projects.json").always(
             function(d){
                 var linkAttr = ' col-xs-6 col-md-4 col-lg-3 col-xl-2 projectimage" data-toggle="modal" data-target="#myModal" id="' ;
                 var textDiv ='<div class="text absolute bottom left text-center">';
