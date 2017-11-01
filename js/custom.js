@@ -120,11 +120,11 @@ $(window).resize(function() {
       });
 
         $(window).on('scroll', function () {
-            var windowHeight = $(window).height(), 
+            var windowHeight = $(window).height(),
             documentHeight = $(document).height(),
             heightDifference = documentHeight - windowHeight - footerSize,
             pxlCount = $(document).scrollTop()/1000,
-            winScrollTop = $(window).scrollTop(); 
+            winScrollTop = $(window).scrollTop();
 
             $('#main-navigation').toggleClass('scroll', $(document).scrollTop() >= 80);
             // hero scroll
@@ -204,9 +204,14 @@ $(window).resize(function() {
                     modalContent.find('.overview').text(d[index].modal.text.overview);
                     modalContent.find(".images").append('<img src="'+d[index].modal.images[0]+'" alt="'+d[index].modal.text.description[0]+'"/>');
                     if( d[index].modal.text.linktext == "No Link"){
-                        modalContent.find('a.button').hide().attr("href", "").text("");
+                        modalContent.find('a.button.site').hide().attr("href", "").text("");
                     }else{
-                        modalContent.find('a.button').show().attr("href", d[index].modal.text.link).text(d[index].modal.text.linktext);
+                        modalContent.find('a.button.site').show().attr("href", d[index].modal.text.link).text(d[index].modal.text.linktext);
+                    }
+                    if( d[index].modal.text.github == "No Link"){
+                        modalContent.find('a.button.github').hide().attr("href", "").text("");
+                    }else{
+                        modalContent.find('a.button.github').show().attr("href", d[index].modal.text.link).text("Github Repo");
                     }
                     for (i = 0; i < d[index].modal.text.list.length; i++) {
                         modalContent.find(".list").append('<li>'+d[index].modal.text.list[i]+'</li>');
