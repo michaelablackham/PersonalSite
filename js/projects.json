@@ -31,7 +31,8 @@
 					"2017 Thinkful Bootcamp Capstone, Various Screens"
 				],
 				"linktext":"Check Your Sunset",
-				"link":"http://michaelablackham.github.io/thinkful-sunset/build/index.html"
+				"link":"http://michaelablackham.github.io/thinkful-sunset/build/index.html",
+				"github": "https://github.com/michaelablackham/thinkful-sunset"
 			}
 		}
 	},
@@ -66,7 +67,8 @@
 					"2017 Thinkful Bootcamp, Tic Tac Toe, Example screens"
 				],
 				"linktext":"Play Game",
-				"link":"http://michaelablackham.github.io/thinkful-tic-tac-toe/"
+				"link":"http://michaelablackham.github.io/thinkful-tic-tac-toe/",
+				"github": "https://github.com/michaelablackham/thinkful-tic-tac-toe"
 			}
 		}
 	},
@@ -101,7 +103,8 @@
 					"2017 Thinkful Bootcamp, Quiz Project, Multiple Screens"
 				],
 				"linktext":"Take The Quiz",
-				"link":"https://michaelablackham.github.io/thinkful-color-quiz/build/index.html"
+				"link":"https://michaelablackham.github.io/thinkful-color-quiz/build/index.html",
+				"github": "https://github.com/michaelablackham/thinkful-color-quiz"
 			}
 		}
 	},
@@ -140,7 +143,8 @@
 					"2016 Website Design, Responsive, Close Up Detail"
 				],
 				"linktext":"View Site",
-				"link":"http://www.membersfirst.com/"
+				"link":"http://www.membersfirst.com/",
+				"github": "No Link"
 			}
 		}
 	},
@@ -180,7 +184,8 @@
 					"2015 Website Designn, Website Redesign, Panel Layout, IMA Award Winner, Close Up Detail"
 				],
 				"linktext":"View Site",
-				"link":"http://www.clubatmorningside.com/"
+				"link":"http://www.clubatmorningside.com/",
+				"github": "No Link"
 			}
 		}
 	},
@@ -218,7 +223,8 @@
 					"2016 Website Design, Website Redesign, Detail"
 				],
 				"linktext":"View Site",
-				"link":"https://www.newseabury.com/"
+				"link":"https://www.newseabury.com/",
+				"github": "No Link"
 			}
 		}
 	},
@@ -252,7 +258,8 @@
 					"2016 Website Design, Website Redesign, Detail"
 				],
 				"linktext":"View Site",
-				"link":"http://www.plymouthcc.net/"
+				"link":"http://www.plymouthcc.net/",
+				"github": "No Link"
 			}
 		}
 	},
@@ -293,7 +300,8 @@
 					"2015 Website Design, Website Redesign, IMA Award Winner, Detail"
 				],
 				"linktext":"View Site",
-				"link":"http://www.umassclub.com"
+				"link":"http://www.umassclub.com",
+				"github": "No Link"
 			}
 		}
 	},
@@ -329,7 +337,8 @@
 					"2016 Website Design, Website Redesign, Responsive, Detail"
 				],
 				"linktext":"View Site",
-				"link":"http://www.ochsnerfitness.com/"
+				"link":"http://www.ochsnerfitness.com/",
+				"github": "No Link"
 			}
 		}
 	},
@@ -370,7 +379,8 @@
 					"2015 Website Design, Website Redesign, IMA Award Winner, Detail"
 				],
 				"linktext":"View Site",
-				"link":"http://www.sawgrasscountryclub.com/"
+				"link":"http://www.sawgrasscountryclub.com/",
+				"github": "No Link"
 			}
 		}
 	},
@@ -408,7 +418,8 @@
 					"2015 Website Design, Website Redesign, Detail"
 				],
 				"linktext":"View Site",
-				"link":"http://www.cornellclubnyc.com"
+				"link":"http://www.cornellclubnyc.com",
+				"github": "No Link"
 			}
 		}
 	},
@@ -439,7 +450,8 @@
 					"2016 Website Design , App Design, Responsive Website, Layouts"
 				],
 				"linktext":"No Link",
-				"link":""
+				"link":"",
+				"github": "No Link"
 			}
 		}
 	},
@@ -477,7 +489,8 @@
 					"2015 Website Design, Website Redesign, Detail"
 				],
 				"linktext":"View Site",
-				"link":"http://www.theatlanticclub.com/"
+				"link":"http://www.theatlanticclub.com/",
+				"github": "No Link"
 			}
 		}
 	},
@@ -515,7 +528,8 @@
 					"2011 Charcoal Portrait | Cats | 8.5x11"
 				],
 				"linktext":"No Link",
-				"link":""
+				"link":"",
+				"github": "No Link"
 			}
 		}
 	}
